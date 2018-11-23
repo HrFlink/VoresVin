@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "265418257745",
+    "firebase_url": "https://voresvin-6a01b.firebaseio.com",
+    "project_id": "voresvin-6a01b",
+    "storage_bucket": "voresvin-6a01b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265418257745:android:ac84b1e038800696",
+        "android_client_info": {
+          "package_name": "dk.voresweb.voresvin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265418257745-5di6m9b78murdu7e9rvu06c20c7malpb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dk.voresweb.voresvin",
+            "certificate_hash": "b9851ef85381e8db2dce8d45b01dc8c10636f623"
+          }
+        },
+        {
+          "client_id": "265418257745-m2ifvu327pfrul191i79r1vvj1esuj00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3CXrSsZMf21GrgO-8K9X9PjBMnREKt_k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265418257745-m2ifvu327pfrul191i79r1vvj1esuj00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
