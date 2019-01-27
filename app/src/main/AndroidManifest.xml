@@ -3,6 +3,7 @@
     package="dk.voresweb.voresvin">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".WineStore.WineStoreListActivity"
+            android:label="@string/title_winestore_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".WineStore.WineStoreDetailActivity"
+            android:label="@string/title_winestore_detail"
+            android:parentActivityName=".WineStore.WineStoreListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dk.voresweb.voresvin.WineStore.WineStoreListActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -25,8 +39,20 @@
         <activity android:name=".Login.RegisterPWForgot" />
         <activity
             android:name=".barcode.BarcodeCaptureActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
-</application>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Wines.WineListActivity"
+            android:label="@string/title_wine_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Wines.WineDetailActivity"
+            android:label="@string/title_wine_detail"
+            android:parentActivityName=".Wines.WineListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dk.voresweb.voresvin.Wines.WineListActivity" />
+        </activity>
+    </application>
 
 </manifest>

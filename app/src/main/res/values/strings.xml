@@ -12,5 +12,9 @@
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_wine_list">Wines</string>
+    <string name="title_wine_detail">Wine Detail</string>
+    <string name="title_winestore_list">Wines</string>
+    <string name="title_winestore_detail">WineStore Detail</string>
 
 </resources>

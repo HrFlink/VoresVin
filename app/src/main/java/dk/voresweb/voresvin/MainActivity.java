@@ -1,5 +1,6 @@
 package dk.voresweb.voresvin;
 
+import android.animation.Animator;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 import dk.voresweb.voresvin.Login.LoginActivity;
 import dk.voresweb.voresvin.Login.RegisterEmailActivity;
+import dk.voresweb.voresvin.WineStore.WineStoreListActivity;
 import dk.voresweb.voresvin.barcode.BarcodeCaptureActivity;
+
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,11 +37,56 @@ public class MainActivity extends AppCompatActivity {
     private TextView mResultTextView;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                }
+            }
+        };
+
+        final FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null) {
+            startActivity(new Intent(getApplicationContext(), WineStoreListActivity.class));
+        }
+        else {
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        }
+
+
+
+    }
+
+
+    @Override
+    protected void onStart () {
+        super.onStart();
+        firebaseAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onStop () {
+        super.onStop();
+        if (authStateListener != null) {
+            firebaseAuth.removeAuthStateListener(authStateListener);
+        }
+    }
+
+}
+
+/********* old main activity
+
         setContentView(R.layout.activity_main);
+
         textView = (TextView) findViewById(R.id.HelloTV);
         btnDeleteUser =(Button) findViewById(R.id.DelteAcBT);
         btnLogout =(Button) findViewById(R.id.LogoutBT);
@@ -51,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), BarcodeCaptureActivity.class));
             }
         });
+
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -101,7 +151,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
+
+
 
     @Override
     protected void onStart() {
@@ -115,5 +168,5 @@ public class MainActivity extends AppCompatActivity {
         if(authStateListener!=null){
             firebaseAuth.removeAuthStateListener(authStateListener);
         }
-    }
-}
+
+    *********/
