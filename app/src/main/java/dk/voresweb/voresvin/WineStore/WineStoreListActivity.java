@@ -17,6 +17,7 @@ import android.widget.TextView;
 import dk.voresweb.voresvin.R;
 
 import dk.voresweb.voresvin.WineStore.dummy.DummyContent;
+import dk.voresweb.voresvin.barcode.BarcodeCaptureActivity;
 
 import java.util.List;
 
@@ -49,6 +50,7 @@ public class WineStoreListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), BarcodeCaptureActivity.class));
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
